@@ -14,6 +14,8 @@ class NextViewController: UIViewController {
     
     
     var passText = String()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
