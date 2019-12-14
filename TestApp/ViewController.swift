@@ -19,11 +19,31 @@ class ViewController: UIViewController {
     //変数passTextをString型で宣言してください。
     //最後にlabel2.text = passTextと書いてください。
     
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        label.text = "テスト！！！！"
+        
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func next(_ sender: Any) {
+        
+        
+        performSegue(withIdentifier: "next", sender: nil)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let nextVC = segue.destination as? NextViewController
+        
+        nextVC.passText = label.text!
+        
+    }
+    
 }
 
